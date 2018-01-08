@@ -28,7 +28,8 @@
   },
   "require-dev": {
     "msbios/test": "^1.0",
-    "msbios/debug": "^1.0"
+    "msbios/debug": "^1.0",
+    "msbios/application": "^1.0"
   },
   "scripts": {
     "cs-check": "phpcs",
@@ -39,7 +40,7 @@
     ],
     "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
     "upload-coverage": "coveralls -v",
-    "serve": "php -S 0.0.0.0:3107 -t public public/index.php",
+    "serve": "php -S 0.0.0.0:3107 -t public index.php",
     "commit": "git add . && git commit -a -m \"Lazy Composer Commiter\" && git push"
   },
   "extra": {

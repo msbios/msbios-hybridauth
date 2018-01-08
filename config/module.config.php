@@ -9,9 +9,8 @@ return [
 
     'service_manager' => [
         'factories' => [
-
+            Hybridauth::class =>
+                Factory\HybridauthFactory::class
         ]
-    ],
-
-
+    ]
 ];
