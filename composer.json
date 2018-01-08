@@ -24,6 +24,7 @@
     }
   },
   "require": {
+    "hybridauth/hybridauth": "^2.10"
   },
   "require-dev": {
     "msbios/test": "^1.0",

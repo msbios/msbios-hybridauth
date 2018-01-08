@@ -7,11 +7,5 @@ namespace MSBios\Hybridauth;
 
 return [
 
-    'service_manager' => [
-        'factories' => [
-
-        ]
-    ],
-
 
 ];
