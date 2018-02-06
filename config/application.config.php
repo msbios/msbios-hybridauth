@@ -8,7 +8,8 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
-        'MSBios\Application',
+        'Zend\Navigation',
+        'Zend\Router',
         'Zend\Mvc\Plugin\FilePrg',
         'Zend\Form',
         'Zend\Hydrator',
@@ -17,14 +18,14 @@ return [
         'Zend\Mvc\Plugin\FlashMessenger',
         'Zend\Mvc\Plugin\Identity',
         'Zend\Mvc\Plugin\Prg',
+        'Zend\I18n',
+        'MSBios\Navigation',
+        'MSBios\Application',
         'MSBios\Theme',
         'MSBios\Widget',
         'MSBios\I18n',
-        'Zend\I18n',
-        'MSBios\Navigation',
-        'Zend\Navigation',
-        'Zend\Router',
         'MSBios\Assetic',
+        'ZendDeveloperTools'
     ],
 
     'module_listener_options' => [
