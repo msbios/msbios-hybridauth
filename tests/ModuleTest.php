@@ -3,14 +3,14 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBiosTest\Assetic;
+namespace MSBiosTest\Hybridauth;
 
-use MSBios\Assetic\Module;
+use MSBios\Hybridauth\Module;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class ModuleTest
- * @package MSBiosTest\Assetic
+ * @package MSBiosTest\Hybridauth
  */
 class ModuleTest extends TestCase
 {

@@ -6,6 +6,10 @@
  */
 namespace MSBios\Hybridauth;
 
+use MSBios\AutoloaderAwareInterface;
+use MSBios\AutoloaderAwareTrait;
+use MSBios\ModuleAwareInterface;
+use MSBios\ModuleAwareTrait;
 use MSBios\ModuleInterface;
 
 /**
@@ -14,51 +18,11 @@ use MSBios\ModuleInterface;
  */
 class Module implements
     ModuleInterface,
-    AutoloaderProviderInterface
+    ModuleAwareInterface,
+    AutoloaderAwareInterface
 {
     const VERSION = '1.0.0';
 
-    /**
-     * @return mixed
-     */
-    public function getConfig()
-    {
-        return include __DIR__ . '/../config/module.config.php';
-    }
-
-    ///**
-    // * Listen to the bootstrap event
-    // *
-    // * @param EventInterface $e
-    // * @return array
-    // */
-    //public function onBootstrap(EventInterface $e)
-    //{
-    //    /** @var ApplicationInterface $target */
-    //    $target = $e->getTarget();
-    //
-    //    /** @var ServiceLocatorInterface $serviceManager */
-    //    $serviceManager = $target->getServiceManager();
-    //
-    //    (new LazyListenerAggregate(
-    //        $serviceManager->get(self::class)['listeners'],
-    //        $serviceManager
-    //    ))->attach($target->getEventManager());
-    //}
-
-    /**
-     * Return an array for passing to Zend\Loader\AutoloaderFactory.
-     *
-     * @return array
-     */
-    public function getAutoloaderConfig()
-    {
-        return [
-            AutoloaderFactory::STANDARD_AUTOLOADER => [
-                StandardAutoloader::LOAD_NS => [
-                    __NAMESPACE__ => __DIR__,
-                ],
-            ],
-        ];
-    }
+    use ModuleAwareTrait;
+    use AutoloaderAwareTrait;
 }

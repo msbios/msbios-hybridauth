@@ -1,11 +1,11 @@
 {
-  "name": "msbios/hydridauth",
-  "description": "MSBios Hydridauth",
-  "license": "GPL",
+  "name": "msbios/hybridauth",
+  "description": "MSBios Hybridauth",
+  "license": "MIT",
   "keywords": [
     "php"
   ],
-  "homepage": "https://github.com/msbios/msbios-hydridauth",
+  "homepage": "https://github.com/msbios/msbios-hybridauth",
   "minimum-stability": "stable",
   "authors": [
     {
@@ -15,12 +15,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "MSBios\\Hydridauth\\": "src/"
+      "MSBios\\Hybridauth\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MSBiosTest\\Hydridauth\\": "tests/"
+      "MSBiosTest\\Hybridauth\\": "tests/"
     }
   },
   "require": {
@@ -40,7 +40,7 @@
     ],
     "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
     "upload-coverage": "coveralls -v",
-    "serve": "php -S 0.0.0.0:3107 -t public index.php",
+    "serve": "php -S 0.0.0.0:3107 -t public public/index.php",
     "commit": "git add . && git commit -a -m \"Lazy Composer Commiter\" && git push"
   },
   "extra": {

@@ -8,6 +8,8 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'Zend\Validator',
+        'Zend\Session',
         'Zend\Navigation',
         'Zend\Router',
         'Zend\Mvc\Plugin\FilePrg',
@@ -19,12 +21,16 @@ return [
         'Zend\Mvc\Plugin\Identity',
         'Zend\Mvc\Plugin\Prg',
         'Zend\I18n',
+        'MSBios\View',
         'MSBios\Navigation',
         'MSBios\Application',
         'MSBios\Theme',
         'MSBios\Widget',
         'MSBios\I18n',
         'MSBios\Assetic',
+        'MSBios\Hybridauth',
+
+        'Zend\Log',
         'ZendDeveloperTools'
     ],
 
