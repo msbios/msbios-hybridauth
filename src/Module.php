@@ -7,11 +7,11 @@
 namespace MSBios\Hybridauth;
 
 use MSBios\AutoloaderAwareInterface;
-use MSBios\AutoloaderAwareTrait;
 use MSBios\Hybridauth\Initializer\HybridauthInitializer;
 use MSBios\ModuleAwareInterface;
-use MSBios\ModuleAwareTrait;
 use MSBios\ModuleInterface;
+use Zend\Loader\AutoloaderFactory;
+use Zend\Loader\StandardAutoloader;
 use Zend\ModuleManager\Feature\ControllerProviderInterface;
 
 /**
@@ -25,10 +25,33 @@ class Module implements
     ControllerProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.5';
+    const VERSION = '1.0.6';
 
-    use ModuleAwareTrait;
-    use AutoloaderAwareTrait;
+    /**
+     * Returns configuration to merge with application configuration
+     *
+     * @return array|\Traversable
+     */
+    public function getConfig()
+    {
+        return include __DIR__ . '/../config/module.config.php';
+    }
+
+    /**
+     * Return an array for passing to Zend\Loader\AutoloaderFactory.
+     *
+     * @return array
+     */
+    public function getAutoloaderConfig()
+    {
+        return [
+            AutoloaderFactory::STANDARD_AUTOLOADER => [
+                StandardAutoloader::LOAD_NS => [
+                    __NAMESPACE__ => __DIR__,
+                ],
+            ],
+        ];
+    }
 
     /**
      * Expected to return \Zend\ServiceManager\Config object or array to seed
