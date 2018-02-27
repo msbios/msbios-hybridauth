@@ -16,7 +16,7 @@ class IndexController extends AbstractActionController
     /**
      *
      */
-    public function endpointAction()
+    public function indexAction()
     {
         \Hybrid_Endpoint::process();
     }

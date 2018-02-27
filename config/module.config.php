@@ -12,13 +12,13 @@ return [
 
     'router' => [
         'routes' => [
-            'endpoint' => [
+            'hybridauth' => [
                 'type' => Literal::class,
                 'options' => [
                     'route' => '/hybridauth',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
-                        'action' => 'endpoint',
+                        'action' => 'index',
                     ],
                 ],
             ],
