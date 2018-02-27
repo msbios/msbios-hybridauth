@@ -5,12 +5,36 @@
  */
 namespace MSBios\Hybridauth;
 
-use MSBios\Hybridauth\Provider\Facebook;
-use MSBios\Hybridauth\Provider\Google;
-use MSBios\Hybridauth\Provider\Twitter;
-use MSBios\Hybridauth\Provider\Yandex;
+use Zend\Router\Http\Literal;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
+
+    'router' => [
+        'routes' => [
+            'endpoint' => [
+                'type' => Literal::class,
+                'options' => [
+                    'route' => '/hybridauth',
+                    'defaults' => [
+                        'controller' => Controller\IndexController::class,
+                        'action' => 'endpoint',
+                    ],
+                ],
+            ],
+        ],
+    ],
+
+    'controllers' => [
+        'factories' => [
+            Controller\IndexController::class =>
+                InvokableFactory::class
+        ],
+        'aliases' => [
+            \MSBios\Application\Controller\IndexController::class =>
+                Controller\IndexController::class,
+        ]
+    ],
 
     'service_manager' => [
         'factories' => [
@@ -21,26 +45,57 @@ return [
 
     Module::class => [
 
-        'callback' => null,
+        "base_url" => "http://localhost/hybridauth-git/hybridauth/",
 
-        'providers' => [
-            Facebook::class => [
+        "providers" => [
+            // openid providers
+            "OpenID" => [
                 "enabled" => true,
             ],
-            Google::class => [
+            "Yahoo" => [
+                "enabled" => true,
+                "keys" => ["id" => "", "secret" => ""],
+            ],
+            "AOL" => [
                 "enabled" => true,
             ],
-            Twitter::class => [
+            "Google" => [
                 "enabled" => true,
-                "keys" => [
-                    "key" => "",
-                    "secret" => ""
-                ]
+                "keys" => ["id" => "", "secret" => ""],
             ],
-            Yandex::class => [
+            "Facebook" => [
                 "enabled" => true,
-            ]
-        ]
+                "keys" => ["id" => "", "secret" => ""],
+                "trustForwarded" => false,
+            ],
+            "Twitter" => [
+                "enabled" => true,
+                "keys" => ["key" => "", "secret" => ""],
+                "includeEmail" => false,
+            ],
+            // windows live
+            "Live" => [
+                "enabled" => true,
+                "keys" => ["id" => "", "secret" => ""],
+            ],
+            "LinkedIn" => [
+                "enabled" => true,
+                "keys" => ["id" => "", "secret" => ""],
+                "fields" => [],
+            ],
+            "Foursquare" => [
+                "enabled" => true,
+                "keys" => ["id" => "", "secret" => ""],
+            ],
+        ],
 
+        // If you want to enable logging, set 'debug_mode' to true.
+        // You can also set it to
+        // - "error" To log only error messages. Useful in production
+        // - "info" To log info and error messages (ignore debug messages)
+        "debug_mode" => false,
+
+        // Path to file writable by the web server. Required if 'debug_mode' is not false
+        "debug_file" => "",
     ]
 ];

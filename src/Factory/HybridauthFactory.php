@@ -8,6 +8,7 @@ namespace MSBios\Hybridauth\Factory;
 
 use Interop\Container\ContainerInterface;
 use MSBios\Hybridauth\Hybridauth;
+use MSBios\Hybridauth\Module;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
@@ -24,6 +25,8 @@ class HybridauthFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        return new Hybridauth;
+        return new Hybridauth(
+            $container->get(Module::class)
+        );
     }
 }

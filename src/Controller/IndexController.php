@@ -5,13 +5,13 @@
  */
 namespace MSBios\Hybridauth\Controller;
 
-use MSBios\Application\Controller\IndexController as DefaultIndexController;
+use Zend\Mvc\Controller\AbstractActionController;
 
 /**
  * Class IndexController
  * @package MSBios\Hybridauth\Controller
  */
-class IndexController extends DefaultIndexController
+class IndexController extends AbstractActionController
 {
     /**
      *
