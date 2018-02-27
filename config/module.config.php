@@ -5,7 +5,7 @@
  */
 namespace MSBios\Hybridauth;
 
-use Zend\Router\Http\Literal;
+use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
@@ -13,9 +13,9 @@ return [
     'router' => [
         'routes' => [
             'hybridauth' => [
-                'type' => Literal::class,
+                'type' => Segment::class,
                 'options' => [
-                    'route' => '/hybridauth',
+                    'route' => '/hybridauth[/]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action' => 'index',
