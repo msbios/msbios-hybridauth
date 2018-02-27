@@ -39,7 +39,9 @@ return [
     'service_manager' => [
         'factories' => [
             Hybridauth::class =>
-                Factory\HybridauthFactory::class
+                Factory\HybridauthFactory::class,
+            Module::class =>
+                Factory\ModuleFactory::class
         ]
     ],
 
