@@ -8,9 +8,11 @@ namespace MSBios\Hybridauth;
 
 use MSBios\AutoloaderAwareInterface;
 use MSBios\AutoloaderAwareTrait;
+use MSBios\Hybridauth\Initializer\HybridauthInitializer;
 use MSBios\ModuleAwareInterface;
 use MSBios\ModuleAwareTrait;
 use MSBios\ModuleInterface;
+use Zend\ModuleManager\Feature\ControllerProviderInterface;
 
 /**
  * Class Module
@@ -19,11 +21,27 @@ use MSBios\ModuleInterface;
 class Module implements
     ModuleInterface,
     ModuleAwareInterface,
-    AutoloaderAwareInterface
+    AutoloaderAwareInterface,
+    ControllerProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.2';
+    const VERSION = '1.0.3';
 
     use ModuleAwareTrait;
     use AutoloaderAwareTrait;
+
+    /**
+     * Expected to return \Zend\ServiceManager\Config object or array to seed
+     * such an object.
+     *
+     * @return array|\Zend\ServiceManager\Config
+     */
+    public function getControllerConfig()
+    {
+        return [
+            'initializers' => [
+                new HybridauthInitializer
+            ]
+        ];
+    }
 }
