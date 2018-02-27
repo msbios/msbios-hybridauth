@@ -21,7 +21,8 @@ class Module implements
     ModuleAwareInterface,
     AutoloaderAwareInterface
 {
-    const VERSION = '1.0.0';
+    /** @const VERSION */
+    const VERSION = '1.0.1';
 
     use ModuleAwareTrait;
     use AutoloaderAwareTrait;
