@@ -6,15 +6,15 @@
 namespace MSBios\Hybridauth\Initializer;
 
 use Interop\Container\ContainerInterface;
-use MSBios\Hybridauth\Hybridauth;
-use MSBios\Hybridauth\HybridauthAwareInterface;
+use MSBios\Hybridauth\HybridauthManager;
+use MSBios\Hybridauth\HybridauthManagerAwareInterface;
 use Zend\ServiceManager\Initializer\InitializerInterface;
 
 /**
- * Class HybridauthInitializer
+ * Class HybridauthManagerInitializer
  * @package MSBios\Hybridauth\Initializer
  */
-class HybridauthInitializer implements InitializerInterface
+class HybridauthManagerInitializer implements InitializerInterface
 {
     /**
      * Initialize the given instance
@@ -25,16 +25,16 @@ class HybridauthInitializer implements InitializerInterface
      */
     public function __invoke(ContainerInterface $container, $instance)
     {
-        if ($instance instanceof HybridauthAwareInterface) {
-            $instance->setHybridauth(
-                $container->get(Hybridauth::class)
+        if ($instance instanceof HybridauthManagerAwareInterface) {
+            $instance->setHybridauthManager(
+                $container->get(HybridauthManager::class)
             );
         }
     }
 
     /**
      * @param $an_array
-     * @return HybridauthInitializer
+     * @return HybridauthManagerInitializer
      */
     public static function __set_state($an_array)
     {

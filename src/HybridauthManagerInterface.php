@@ -6,10 +6,10 @@
 namespace MSBios\Hybridauth;
 
 /**
- * Interface HybridauthInterface
+ * Interface HybridauthManagerInterface
  * @package MSBios\Hybridauth
  */
-interface HybridauthInterface
+interface HybridauthManagerInterface
 {
 
 }

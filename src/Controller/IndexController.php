@@ -5,19 +5,23 @@
  */
 namespace MSBios\Hybridauth\Controller;
 
+use MSBios\Hybridauth\HybridauthManagerAwareInterface;
+use MSBios\Hybridauth\HybridauthManagerAwareTrait;
 use Zend\Mvc\Controller\AbstractActionController;
 
 /**
  * Class IndexController
  * @package MSBios\Hybridauth\Controller
  */
-class IndexController extends AbstractActionController
+class IndexController extends AbstractActionController implements HybridauthManagerAwareInterface
 {
+    use HybridauthManagerAwareTrait;
+
     /**
      *
      */
     public function indexAction()
     {
-        \Hybrid_Endpoint::process();
+        $this->getHybridauthManager()->endpoint();
     }
 }
