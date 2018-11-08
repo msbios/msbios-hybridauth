@@ -11,8 +11,6 @@ namespace MSBios\Hybridauth;
  */
 class HybridauthManager extends \Hybrid_Auth implements HybridauthManagerInterface
 {
-    // ...
-
     /**
      * @inheritdoc
      */

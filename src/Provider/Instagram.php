@@ -13,5 +13,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class Instagram extends \Hybrid_Providers_Instagram implements ProviderInterface
 {
-
+    // ...
 }

@@ -13,4 +13,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class GitHub extends \Hybrid_Providers_GitHub implements ProviderInterface
 {
+    // ...
 }

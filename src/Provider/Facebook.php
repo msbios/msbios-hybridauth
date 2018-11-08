@@ -14,5 +14,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class Facebook extends \Hybrid_Providers_Facebook implements ProviderInterface
 {
-
+    // ...
 }

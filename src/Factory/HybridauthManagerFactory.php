@@ -21,7 +21,7 @@ class HybridauthManagerFactory implements FactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return HybridauthManager
+     * @return HybridauthManager|object
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {

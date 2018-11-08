@@ -7,7 +7,6 @@
 namespace MSBios\Hybridauth;
 
 use MSBios\AutoloaderAwareInterface;
-use MSBios\Hybridauth\Initializer\HybridauthManagerInitializer;
 use MSBios\ModuleAwareInterface;
 use MSBios\ModuleInterface;
 use Zend\Loader\AutoloaderFactory;
@@ -25,7 +24,7 @@ class Module implements
     ControllerProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.8';
+    const VERSION = '1.0.9';
 
     /**
      * Returns configuration to merge with application configuration

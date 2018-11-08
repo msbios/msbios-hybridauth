@@ -3,7 +3,6 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-
 namespace MSBios\Hybridauth;
 
 /**
@@ -12,5 +11,5 @@ namespace MSBios\Hybridauth;
  */
 interface ProviderInterface
 {
-
+    // ...
 }

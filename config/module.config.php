@@ -5,6 +5,7 @@
  */
 namespace MSBios\Hybridauth;
 
+use MSBios\Factory\ModuleFactory;
 use Zend\Router\Http\Segment;
 use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -41,7 +42,7 @@ return [
             HybridauthManager::class =>
                 Factory\HybridauthManagerFactory::class,
             Module::class =>
-                Factory\ModuleFactory::class
+                ModuleFactory::class
         ]
     ],
 

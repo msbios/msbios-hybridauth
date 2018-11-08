@@ -3,25 +3,20 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-namespace MSBios\Hybridauth\Initializer;
+namespace MSBios\Hybridauth;
 
 use Interop\Container\ContainerInterface;
-use MSBios\Hybridauth\HybridauthManager;
-use MSBios\Hybridauth\HybridauthManagerAwareInterface;
 use Zend\ServiceManager\Initializer\InitializerInterface;
 
 /**
  * Class HybridauthManagerInitializer
- * @package MSBios\Hybridauth\Initializer
+ * @package MSBios\Hybridauth
  */
 class HybridauthManagerInitializer implements InitializerInterface
 {
     /**
-     * Initialize the given instance
-     *
-     * @param  ContainerInterface $container
-     * @param  object $instance
-     * @return void
+     * @param ContainerInterface $container
+     * @param object $instance
      */
     public function __invoke(ContainerInterface $container, $instance)
     {

@@ -13,5 +13,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class BitBucket extends \Hybrid_Providers_BitBucket implements ProviderInterface
 {
-
+    // ...
 }

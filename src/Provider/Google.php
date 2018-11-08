@@ -14,5 +14,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class Google extends \Hybrid_Providers_Google implements ProviderInterface
 {
-
+    // ...
 }

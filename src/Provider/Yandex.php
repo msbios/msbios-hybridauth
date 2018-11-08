@@ -14,5 +14,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class Yandex extends \Hybrid_Providers_Yandex implements ProviderInterface
 {
-
+    // ...
 }

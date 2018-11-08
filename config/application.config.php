@@ -8,6 +8,8 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
+        'Zend\Cache',
+        'Zend\Serializer',
         'Zend\Validator',
         'Zend\Session',
         'Zend\Navigation',
@@ -21,6 +23,8 @@ return [
         'Zend\Mvc\Plugin\Identity',
         'Zend\Mvc\Plugin\Prg',
         'Zend\I18n',
+
+        'MSBios\Cache',
         'MSBios\View',
         'MSBios\Navigation',
         'MSBios\Application',
@@ -30,10 +34,8 @@ return [
         'MSBios\Assetic',
         'MSBios\Hybridauth',
 
-        'Zend\Log',
         'ZendDeveloperTools'
     ],
-
     'module_listener_options' => [
         'module_paths' => [
             './module',

@@ -11,5 +11,5 @@ namespace MSBios\Hybridauth;
  */
 interface HybridauthManagerInterface
 {
-
+    // ...
 }

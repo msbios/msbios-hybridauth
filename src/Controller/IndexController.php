@@ -18,7 +18,7 @@ class IndexController extends AbstractActionController implements HybridauthMana
     use HybridauthManagerAwareTrait;
 
     /**
-     *
+     * @return void|\Zend\View\Model\ViewModel
      */
     public function indexAction()
     {

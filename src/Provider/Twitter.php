@@ -13,5 +13,5 @@ use MSBios\Hybridauth\ProviderInterface;
  */
 class Twitter extends \Hybrid_Providers_Twitter implements ProviderInterface
 {
-
+    // ...
 }
