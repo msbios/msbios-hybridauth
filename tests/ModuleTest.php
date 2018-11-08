@@ -15,7 +15,7 @@ use Zend\ModuleManager\Feature\ControllerProviderInterface;
  * Class ModuleTest
  * @package MSBiosTest\Hybridauth
  */
-class ModuleTest1 extends TestCase
+class ModuleTest extends TestCase
 {
     /** @var Module */
     protected $instance;

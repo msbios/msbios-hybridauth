@@ -22,6 +22,7 @@ class IndexController extends AbstractActionController implements HybridauthMana
      */
     public function indexAction()
     {
-        $this->getHybridauthManager()->endpoint();
+        $this->getHybridauthManager()
+            ->endpoint();
     }
 }

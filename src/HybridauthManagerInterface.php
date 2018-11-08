@@ -11,5 +11,8 @@ namespace MSBios\Hybridauth;
  */
 interface HybridauthManagerInterface
 {
-    // ...
+    /**
+     * @return mixed
+     */
+    public function endpoint();
 }
