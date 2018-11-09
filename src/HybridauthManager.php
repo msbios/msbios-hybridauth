@@ -3,6 +3,7 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
+
 namespace MSBios\Hybridauth;
 
 /**
@@ -17,5 +18,15 @@ class HybridauthManager extends \Hybrid_Auth implements HybridauthManagerInterfa
     public function endpoint()
     {
         \Hybrid_Endpoint::process();
+    }
+
+    /**
+     *
+     */
+    public function clearProviders()
+    {
+        if (count(self::getProviders())) {
+            self::logoutAllProviders();
+        }
     }
 }

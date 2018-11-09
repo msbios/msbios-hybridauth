@@ -15,4 +15,9 @@ interface HybridauthManagerInterface
      * @return mixed
      */
     public function endpoint();
+
+    /**
+     * @return mixed
+     */
+    public function clearProviders();
 }
