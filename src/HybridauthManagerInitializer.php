@@ -15,6 +15,8 @@ use Zend\ServiceManager\Initializer\InitializerInterface;
 class HybridauthManagerInitializer implements InitializerInterface
 {
     /**
+     * @inheritdoc
+     *
      * @param ContainerInterface $container
      * @param object $instance
      */
@@ -28,6 +30,8 @@ class HybridauthManagerInitializer implements InitializerInterface
     }
 
     /**
+     * @inheritdoc
+     *
      * @param $an_array
      * @return HybridauthManagerInitializer
      */

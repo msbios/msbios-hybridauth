@@ -19,6 +19,11 @@ class HybridauthManagerInitializerTest extends TestCase
 {
     public function testCallInvokeMethod()
     {
+        if (empty($_SERVER)) {
+            $_SERVER['HTTP_HOST'] = 'localhost';
+            $_SERVER['REQUEST_URI'] = 'localhost';
+        }
+
         /** @var InitializerInterface $instance */
         $instance = new HybridauthManagerInitializer;
         $this->assertInstanceOf(InitializerInterface::class, $instance);

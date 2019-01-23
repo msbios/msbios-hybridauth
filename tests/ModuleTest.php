@@ -41,15 +41,6 @@ class ModuleTest extends TestCase
     /**
      *
      */
-    public function testGetAutoloaderConfig()
-    {
-        $this->assertInstanceOf(AutoloaderAwareInterface::class, $this->instance);
-        $this->assertInternalType('array', $this->instance->getAutoloaderConfig());
-    }
-
-    /**
-     *
-     */
     public function testGetControllerConfig()
     {
         $this->assertInstanceOf(ControllerProviderInterface::class, $this->instance);

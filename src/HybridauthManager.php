@@ -14,19 +14,26 @@ class HybridauthManager extends \Hybrid_Auth implements HybridauthManagerInterfa
 {
     /**
      * @inheritdoc
+     *
+     * @param array $request The current request parameters. Leave as null to default to use $_REQUEST.
+     * @return \Hybrid_Endpoint|mixed
      */
-    public function endpoint()
+    public function endpoint($request = null)
     {
-        \Hybrid_Endpoint::process();
+        return \Hybrid_Endpoint::process($request);
     }
 
     /**
+     * @inheritdoc
      *
+     * @return $this|mixed
      */
     public function clearProviders()
     {
         if (count(self::getProviders())) {
             self::logoutAllProviders();
         }
+
+        return $this;
     }
 }

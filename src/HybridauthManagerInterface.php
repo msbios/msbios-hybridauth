@@ -12,12 +12,17 @@ namespace MSBios\Hybridauth;
 interface HybridauthManagerInterface
 {
     /**
-     * @return mixed
+     * Process the current request
+     *
+     * @param array $request The current request parameters. Leave as null to default to use $_REQUEST.
+     * @return \Hybrid_Endpoint|mixed
      */
-    public function endpoint();
+    public function endpoint($request = null);
 
     /**
-     * @return mixed
+     * A generic function to logout all connected provider at once
+     *
+     * @return $this|mixed
      */
     public function clearProviders();
 }

@@ -6,40 +6,39 @@
  */
 namespace MSBios\Hybridauth;
 
-use MSBios\AutoloaderAwareInterface;
-use MSBios\AutoloaderAwareTrait;
-use MSBios\ModuleAwareInterface;
-use MSBios\ModuleInterface;
 use Zend\ModuleManager\Feature\ControllerProviderInterface;
 
 /**
  * Class Module
  * @package MSBios\Hybridauth
  */
-class Module implements
-    ModuleInterface,
-    ModuleAwareInterface,
-    AutoloaderAwareInterface,
-    ControllerProviderInterface
+class Module extends \MSBios\Module implements ControllerProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.11';
-
-    use AutoloaderAwareTrait;
+    const VERSION = '1.0.13';
 
     /**
-     * Returns configuration to merge with application configuration
+     * @inheritdoc
      *
-     * @return array|\Traversable
+     * @return string
      */
-    public function getConfig()
+    protected function getDir()
     {
-        return include __DIR__ . '/../config/module.config.php';
+        return __DIR__;
     }
 
     /**
-     * Expected to return \Zend\ServiceManager\Config object or array to seed
-     * such an object.
+     * @inheritdoc
+     *
+     * @return string
+     */
+    protected function getNamespace()
+    {
+        return __NAMESPACE__;
+    }
+
+    /**
+     * @inheritdoc
      *
      * @return array|\Zend\ServiceManager\Config
      */
@@ -47,7 +46,8 @@ class Module implements
     {
         return [
             'initializers' => [
-                new HybridauthManagerInitializer
+                HybridauthManagerInitializer::class =>
+                    new HybridauthManagerInitializer
             ]
         ];
     }
