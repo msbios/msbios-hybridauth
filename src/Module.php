@@ -15,7 +15,7 @@ use Zend\ModuleManager\Feature\ControllerProviderInterface;
 class Module extends \MSBios\Module implements ControllerProviderInterface
 {
     /** @const VERSION */
-    const VERSION = '1.0.13';
+    const VERSION = '1.0.12';
 
     /**
      * @inheritdoc
