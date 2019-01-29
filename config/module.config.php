@@ -51,7 +51,7 @@ return [
         "base_url" => sprintf(
             "%s://%s/hybridauth/",
             (isset($_SERVER['HTTPS']) && 'on' === $_SERVER['HTTPS'] ? "https" : "http"),
-            $_SERVER['HTTP_HOST']
+            isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null
         ),
 
         "providers" => [
